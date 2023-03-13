@@ -156,7 +156,27 @@ section.main .main-title .view {
     border: 1px solid #fff;
     border-radius: 40px ;
     padding: 8px 0;
+
+    /* 밑에 position이 있을때 기준점 main을 생각한다 */
+    position: relative;
+    overflow: hidden;
 }
+
+section.main .main-title .view::after {
+    content: '';
+    width: 0;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+}
+
+section.main .main-title .view:hover::after {
+    width: 100%;
+}
+
 
 
 
